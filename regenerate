@@ -1,0 +1,1 @@
+python /home/jordan/.repo/SuperCollider/tools/cmake_gen/generate_server_plugin_cmake.py -P "NoiseRepellent" -p "plugins/NoiseRepellent" -a "Jordan Henderson"

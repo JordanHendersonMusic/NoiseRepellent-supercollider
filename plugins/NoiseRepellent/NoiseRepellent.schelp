@@ -1,0 +1,26 @@
+class:: NoiseRepellent
+summary:: A noise cancellation plugin. Using https://github.com/lucianodato/libspecbleach
+related:: TODO
+categories:: UGens>TODO
+
+description::
+
+A noise cancellation plugin. Using https://github.com/lucianodato/libspecbleach
+
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+{ NoiseRepellent.ar(/* TODO */) }.play
+
+::
