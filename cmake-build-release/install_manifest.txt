@@ -1,8 +1,0 @@
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/NoiseRepellent_scsynth.so
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/NoiseRepellent_supernova.so
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/Classes/NoiseRepellent.sc
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/HelpSource/Classes/NoiseRepellent.schelp
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/HelpSource/Classes/NRLearnType.schelp
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/HelpSource/Classes/NRAverage.schelp
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/HelpSource/Classes/NRMax.schelp
-/home/jordan/.local/share/SuperCollider/Extensions/NoiseRepellent/NoiseRepellent/HelpSource/Classes/NRMedian.schelp

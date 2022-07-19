@@ -1,8 +1,0 @@
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/NoiseRepellent_scsynth.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/NoiseRepellent_supernova.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/list_install_components.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/install.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/install/local.dir
-/home/jordan/.repo/supercolliderExtensions/noiserepellent/cmake-build-debug/CMakeFiles/install/strip.dir
