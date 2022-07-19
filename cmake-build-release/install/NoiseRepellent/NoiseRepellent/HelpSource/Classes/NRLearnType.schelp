@@ -1,0 +1,4 @@
+class:: NRLearnType
+summary:: An internal helper apart of NoiseRepellent
+related:: NoiseRepellent NRAverage NRMedian NRMax
+::

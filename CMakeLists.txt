@@ -29,7 +29,7 @@ include(InstallRequiredSystemLibraries)
 sc_check_sc_path("${SC_PATH}")
 message(STATUS "Found SuperCollider: ${SC_PATH}")
 set(SC_PATH "${SC_PATH}" CACHE PATH
-    "Path to SuperCollider source. Relative paths are treated as relative to this script" FORCE)
+        "Path to SuperCollider source. Relative paths are treated as relative to this script" FORCE)
 
 include("${SC_PATH}/SCVersion.txt")
 message(STATUS "Building plugins for SuperCollider version: ${SC_VERSION}")
@@ -57,30 +57,91 @@ option(NOVA_SIMD "Build plugins with nova-simd support." ON)
 # include libraries
 
 if (NOVA_SIMD)
-	add_definitions(-DNOVA_SIMD)
-	include_directories(${SC_PATH}/external_libraries/nova-simd)
+    add_definitions(-DNOVA_SIMD)
+    include_directories(${SC_PATH}/external_libraries/nova-simd)
 endif()
 
 ####################################################################################################
 # Begin target NoiseRepellent
 
+
+set(LibSpecBleachFiles
+        plugins/NoiseRepellent/libspecbleach/include/specbleach_adenoiser.h
+        plugins/NoiseRepellent/libspecbleach/include/specbleach_denoiser.h
+        plugins/NoiseRepellent/libspecbleach/src/processors/specbleach_adenoiser.c
+        plugins/NoiseRepellent/libspecbleach/src/processors/specbleach_denoiser.c
+        plugins/NoiseRepellent/libspecbleach/src/processors/denoiser/spectral_denoiser.c
+        plugins/NoiseRepellent/libspecbleach/src/processors/denoiser/spectral_denoiser.h
+        plugins/NoiseRepellent/libspecbleach/src/processors/adaptivedenoiser/adaptive_denoiser.c
+        plugins/NoiseRepellent/libspecbleach/src/processors/adaptivedenoiser/adaptive_denoiser.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/general_utils.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_utils.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_features.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/denoise_mixer.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_features.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_trailing_buffer.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_utils.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_trailing_buffer.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/general_utils.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/utils/denoise_mixer.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/gain_estimation/gain_estimators.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/gain_estimation/gain_estimators.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/configurations.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/critical_bands.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/masking_estimator.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/transient_detector.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/spectral_smoother.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/absolute_hearing_thresholds.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/transient_detector.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/noise_scaling_criterias.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/masking_estimator.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/critical_bands.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/spectral_smoother.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/absolute_hearing_thresholds.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/noise_scaling_criterias.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_estimator.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_estimator.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/adaptive_noise_estimator.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_profile.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_profile.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/adaptive_noise_estimator.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/spectral_whitening.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/spectral_whitening.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/postfilter.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/postfilter.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_windows.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_processor.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_windows.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_buffer.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/fft_transform.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_buffer.h
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_processor.c
+        plugins/NoiseRepellent/libspecbleach/src/shared/stft/fft_transform.c
+        plugins/NoiseRepellent/libspecbleach/src/interfaces/spectral_processor.h
+        )
+
 set(NoiseRepellent_cpp_files
-    plugins/NoiseRepellent/NoiseRepellent.hpp
-    plugins/NoiseRepellent/NoiseRepellent.cpp
-)
+        plugins/NoiseRepellent/NoiseRepellent.hpp
+        plugins/NoiseRepellent/NoiseRepellent.cpp
+        ${LibSpecBleachFiles}
+        )
 set(NoiseRepellent_sc_files
-    plugins/NoiseRepellent/NoiseRepellent.sc
-)
+        plugins/NoiseRepellent/NoiseRepellent.sc
+        )
 set(NoiseRepellent_schelp_files
-    plugins/NoiseRepellent/NoiseRepellent.schelp
-)
+        plugins/NoiseRepellent/NoiseRepellent.schelp
+        plugins/NoiseRepellent/NRLearnType.schelp
+        plugins/NoiseRepellent/NRAverage.schelp
+        plugins/NoiseRepellent/NRMax.schelp
+        plugins/NoiseRepellent/NRMedian.schelp
+        )
 
 sc_add_server_plugin(
-    "NoiseRepellent/NoiseRepellent" # desination directory
-    "NoiseRepellent" # target name
-    "${NoiseRepellent_cpp_files}"
-    "${NoiseRepellent_sc_files}"
-    "${NoiseRepellent_schelp_files}"
+        "NoiseRepellent/NoiseRepellent" # desination directory
+        "NoiseRepellent" # target name
+        "${NoiseRepellent_cpp_files}"
+        "${NoiseRepellent_sc_files}"
+        "${NoiseRepellent_schelp_files}"
 )
 
 # End target NoiseRepellent

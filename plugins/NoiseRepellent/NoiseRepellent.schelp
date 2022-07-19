@@ -1,26 +1,85 @@
 class:: NoiseRepellent
-summary:: A noise cancellation plugin. Using https://github.com/lucianodato/libspecbleach
-related:: TODO
-categories:: UGens>TODO
+summary:: A noise cancellation plugin.
+related:: Classes/NRAverage, Classes/NRMax, Classes/NRMedian
+categories:: UGens>NoiseReduction
 
 description::
 
-A noise cancellation plugin. Using https://github.com/lucianodato/libspecbleach
-
+A noise cancellation plugin.
+Using [ https://github.com/lucianodato/libspecbleach ].
+Ported to Supercollider by Jordan Henderson - [ https://github.com/JordanHendersonMusic ].
+Works by capturing noise.
 
 classmethods::
 
-method::ar, kr
+method::ar
 
-argument::TODO
+argument::input
+Some sound with noise.
 
-argument::TODO
+argument::learner
+Some child class of NRLearnType
 
+argument::reductionAmount
+Between 0 and 40. Measured in decibels.
+
+argument::smoothingFactor
+Between 0 and 1.
+Averages the reduction calculation frame per frame so the rate of change is less resulting in less musical noise but if too strong it can blur transient and reduce high frequencies.
+
+argument::noiseRescale
+Between -1 and 1.
+Strength in which the reduction will be applied.
+It uses the masking thresholds of the signal to determine wherein the spectrum the reduction needs to be stronger.
+This parameter scales how much in each of the frequencies the reduction is going to be applied.
+
+argument::isTransientProtected
+0 or 1.
+Enables or disables the transient protection when smoothing_factor is being used.
+This can help to preserve transient content when smoothing is strong.
+
+argument::whiteningFactor
+Between 0 and 1.
+Percentage of whitening that is going to be applied to the residue of the reduction.
+It modifies the noise floor to be more like white noise. T
+his can help hide musical noise when the noise is colored
+
+argument::invert
+0 or 1.
+Listen to just the noise.
 
 examples::
-
 code::
 
-{ NoiseRepellent.ar(/* TODO */) }.play
+
+(
+s.waitForBoot{
+	try{x.free}{};
+
+	x = {
+		var noisy = SoundIn.ar(0);
+		var repelled = NoiseRepellent.ar(
+			input: noisy,
+			learner: NRAverage(\isLearning.kr(0)),
+		);
+		var difference = {
+			var origAmp = Amplitude.kr(repelled, 0.5, 1).ampdb;
+			var newAmp = Amplitude.kr(noisy, 0.5, 1).ampdb;
+			origAmp - newAmp;
+		}.().poll();
+		noisy.blend(repelled, MouseX.kr());
+	}.play;
+
+}
+)
+
+// capture some noise
+x.set(\isLearning, 1);
+
+// start the noise cancellation
+x.set(\isLearning, 0);
+
+// move mouse from the left to the right of screen to blend between
+
 
 ::

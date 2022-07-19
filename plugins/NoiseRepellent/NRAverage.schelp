@@ -1,0 +1,33 @@
+TITLE:: NRAverage
+summary:: A helper for NoiseRepellent
+categories:: UGens>NoiseReduction
+related:: Classes/NoiseRepellent, Classes/NRMax, Classes/NRMedian
+
+DESCRIPTION::
+Signals that `NoiseRepellent` should use the average profile
+
+CLASSMETHODS::
+
+METHOD:: new
+Create an instance
+
+ARGUMENT:: isLearning
+A control rate ugen that is either 0 and 1, used as a switch.
+When 1, the corresponding `NoiseRepellent` will capture the noise profile,
+when 0, the profile is used to repel the noise.
+
+
+EXAMPLES::
+
+code::
+// used inside of a synth and as a part of a NoiseRepellent
+// See NoiseRepellent for usage
+
+var repelled = NoiseRepellent.ar(
+    input: noisySound,
+    learner: NRAverage(\isLearning.kr(0)),
+);
+
+::
+
+

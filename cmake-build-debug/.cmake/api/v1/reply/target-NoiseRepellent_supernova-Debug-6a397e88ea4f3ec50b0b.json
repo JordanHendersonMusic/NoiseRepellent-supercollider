@@ -1,0 +1,614 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "NoiseRepellent_supernova.so"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"sc_add_server_plugin",
+			"install",
+			"add_definitions",
+			"target_compile_definitions",
+			"sc_add_server_plugin_properties",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"cmake_modules/SuperColliderServerPlugin.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 139,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 68,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 70,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 60,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 1
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 5
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 61,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 5
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC -fvisibility=hidden"
+				},
+				{
+					"fragment" : "-std=gnu++17"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "NOVA_SIMD"
+				},
+				{
+					"define" : "NoiseRepellent_supernova_EXPORTS"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "SUPERNOVA"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/jordan/.repo/SuperCollider/external_libraries/nova-simd"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jordan/.repo/SuperCollider/include/plugin_interface"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jordan/.repo/SuperCollider/include/common"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jordan/.repo/SuperCollider/common"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				1
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "NOVA_SIMD"
+				},
+				{
+					"define" : "NoiseRepellent_supernova_EXPORTS"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "SUPERNOVA"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/jordan/.repo/SuperCollider/external_libraries/nova-simd"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jordan/.repo/SuperCollider/include/plugin_interface"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jordan/.repo/SuperCollider/include/common"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/jordan/.repo/SuperCollider/common"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				4,
+				5,
+				6,
+				8,
+				10,
+				13,
+				14,
+				15,
+				16,
+				20,
+				23,
+				28,
+				29,
+				30,
+				32,
+				33,
+				35,
+				37,
+				39,
+				42,
+				43,
+				47,
+				48,
+				51,
+				52
+			]
+		}
+	],
+	"id" : "NoiseRepellent_supernova::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 3,
+				"path" : "NoiseRepellent/NoiseRepellent"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/home/jordan/.local/share/SuperCollider/Extensions"
+		}
+	},
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "NoiseRepellent_supernova",
+	"nameOnDisk" : "NoiseRepellent_supernova.so",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				3,
+				7,
+				9,
+				11,
+				12,
+				17,
+				18,
+				19,
+				21,
+				22,
+				24,
+				25,
+				26,
+				27,
+				31,
+				34,
+				36,
+				38,
+				40,
+				41,
+				44,
+				45,
+				46,
+				49,
+				50,
+				53
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				4,
+				5,
+				6,
+				8,
+				10,
+				13,
+				14,
+				15,
+				16,
+				20,
+				23,
+				28,
+				29,
+				30,
+				32,
+				33,
+				35,
+				37,
+				39,
+				42,
+				43,
+				47,
+				48,
+				51,
+				52
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/NoiseRepellent.hpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "plugins/NoiseRepellent/NoiseRepellent.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/include/specbleach_adenoiser.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/include/specbleach_denoiser.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/processors/specbleach_adenoiser.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/processors/specbleach_denoiser.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/processors/denoiser/spectral_denoiser.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/processors/denoiser/spectral_denoiser.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/processors/adaptivedenoiser/adaptive_denoiser.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/processors/adaptivedenoiser/adaptive_denoiser.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/general_utils.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_utils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_features.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/denoise_mixer.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_features.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_trailing_buffer.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_utils.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/spectral_trailing_buffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/general_utils.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/utils/denoise_mixer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/gain_estimation/gain_estimators.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/gain_estimation/gain_estimators.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/configurations.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/critical_bands.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/masking_estimator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/transient_detector.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/spectral_smoother.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/absolute_hearing_thresholds.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/transient_detector.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/noise_scaling_criterias.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/masking_estimator.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/critical_bands.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/spectral_smoother.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/absolute_hearing_thresholds.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/pre_estimation/noise_scaling_criterias.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_estimator.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_estimator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/adaptive_noise_estimator.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_profile.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/noise_profile.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/noise_estimation/adaptive_noise_estimator.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/spectral_whitening.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/spectral_whitening.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/postfilter.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/post_estimation/postfilter.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_windows.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_processor.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_windows.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_buffer.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/fft_transform.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_buffer.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/stft_processor.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 1,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/shared/stft/fft_transform.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"path" : "plugins/NoiseRepellent/libspecbleach/src/interfaces/spectral_processor.h",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "MODULE_LIBRARY"
+}

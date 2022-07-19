@@ -1,0 +1,29 @@
+TITLE:: NRLearnType
+summary:: A helper for NoiseRepellent
+categories:: UGens>NoiseReduction
+related:: Classes/NoiseRepellent, Classes/NRAverage, Classes/NRMax, Classes/NRMedian
+
+DESCRIPTION::
+An internal helpers, should not be used directly. See sub classes.
+
+
+CLASSMETHODS::
+
+METHOD:: new
+Not used directly
+
+INSTANCEMETHODS::
+
+METHOD:: isLearning
+Not used directly
+
+METHOD:: init
+Not used directly
+
+
+
+EXAMPLES::
+
+code::
+/* Not used directly */
+::
