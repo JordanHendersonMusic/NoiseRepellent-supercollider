@@ -37,6 +37,11 @@ jobs:
         path: ${{ env.SC_PATH }}
         ref: main
 
+    -name: Install fftw3
+      shell: bash
+      run: sudo apt-get install -y fftw3
+
+
       # Create a separate build directory
       # We'll use this as our working directory for subsequent commands
     - name: Create Build Environment
