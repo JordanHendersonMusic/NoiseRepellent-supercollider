@@ -11,17 +11,19 @@ set(project_name "NoiseRepellent")
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules ${CMAKE_MODULE_PATH})
 set(CMAKE_CXX_STANDARD 17)
 
+find_package(FFTW REQUIRED)
+
 ####################################################################################################
 # load modules
 include(SuperColliderServerPlugin RESULT_VARIABLE server_plugin_found)
-if(NOT server_plugin_found)
+if (NOT server_plugin_found)
     message(FATAL_ERROR "Could not find server plugin functions module")
-endif()
+endif ()
 
 include(SuperColliderCompilerConfig RESULT_VARIABLE compiler_config_found)
-if(NOT compiler_config_found)
+if (NOT compiler_config_found)
     message(FATAL_ERROR "Could not find compiler config module")
-endif()
+endif ()
 
 # Windows - puts redistributable DLLs in install directory
 include(InstallRequiredSystemLibraries)
@@ -38,10 +40,10 @@ message(STATUS "Building plugins for SuperCollider version: ${SC_VERSION}")
 project(${project_name})
 sc_do_initial_compiler_config() # do after setting project so compiler ID is available
 
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT OR NOT CMAKE_INSTALL_PREFIX)
+if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT OR NOT CMAKE_INSTALL_PREFIX)
     message(WARNING "No install prefix provided, defaulting to $BUILD_DIR/install")
     set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Install prefix" FORCE)
-endif()
+endif ()
 
 message(STATUS "Install directory set to: ${CMAKE_INSTALL_PREFIX}")
 
@@ -59,7 +61,7 @@ option(NOVA_SIMD "Build plugins with nova-simd support." ON)
 if (NOVA_SIMD)
     add_definitions(-DNOVA_SIMD)
     include_directories(${SC_PATH}/external_libraries/nova-simd)
-endif()
+endif ()
 
 ####################################################################################################
 # Begin target NoiseRepellent
@@ -136,6 +138,7 @@ set(NoiseRepellent_schelp_files
         plugins/NoiseRepellent/NRMedian.schelp
         )
 
+
 sc_add_server_plugin(
         "NoiseRepellent/NoiseRepellent" # desination directory
         "NoiseRepellent" # target name
@@ -143,6 +146,8 @@ sc_add_server_plugin(
         "${NoiseRepellent_sc_files}"
         "${NoiseRepellent_schelp_files}"
 )
+
+target_link_libraries(${sy_name} FFTW::Float)
 
 # End target NoiseRepellent
 ####################################################################################################
