@@ -147,7 +147,7 @@ sc_add_server_plugin(
         "${NoiseRepellent_schelp_files}"
 )
 
-#target_link_libraries(${sy_name} FFTW::Float)
+target_link_libraries(${sy_name} FFTW::Float)
 
 # End target NoiseRepellent
 ####################################################################################################
